@@ -18,7 +18,7 @@ export const Dashboard = ({
   objectivesData,
   currentDepartment,
   isDepartmentView,
-  departmentColors,
+  departmentColors: _departmentColors, // Prefijado con _ para indicar que no se usa
   onFilterDepartment,
   onSelectDepartment,
   onSelectOwner,
@@ -186,7 +186,7 @@ export const Dashboard = ({
             }
           }
         },
-        onClick: (event, elements) => {
+        onClick: (_event, elements) => { // Prefijado con _ para indicar que no se usa
           if (elements.length > 0) {
             const index = elements[0].index;
             const department = departmentStats[index].department;
@@ -261,7 +261,7 @@ export const Dashboard = ({
             }
           }
         },
-        onClick: (event, elements) => {
+        onClick: (_event, elements) => { // Prefijado con _ para indicar que no se usa
           if (elements.length > 0) {
             const index = elements[0].index;
             const owner = ownerStats[index].owner;

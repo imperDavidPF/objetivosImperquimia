@@ -18,7 +18,7 @@ export const Searcher = ({
   onClearSearch
 }: SearcherProps) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const searchTimeout = useRef<NodeJS.Timeout | null>(null);
+  const searchTimeout = useRef<number | null>(null); // Cambiado de NodeJS.Timeout a number
 
   const handleSearchInput = (value: string) => {
     setSearchQuery(value);
@@ -29,7 +29,7 @@ export const Searcher = ({
     }
     
     // Establecer nuevo timeout para buscar después de que el usuario deje de escribir
-    searchTimeout.current = setTimeout(() => {
+    searchTimeout.current = window.setTimeout(() => { // Usando window.setTimeout
       if (value.trim().length >= 2) {
         onSearch(value.trim());
       } else {

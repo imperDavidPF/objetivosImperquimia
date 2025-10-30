@@ -14,7 +14,7 @@ export const DetailsObjectives = ({
   selectedOwner,
   selectedDepartment,
   objectivesData,
-  currentDepartment
+  currentDepartment: _currentDepartment // Prefijado con _ para indicar que no se usa
 }: DetailsObjectivesProps) => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart | null>(null);
